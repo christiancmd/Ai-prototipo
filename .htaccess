@@ -1,0 +1,27 @@
+<IfModule mime_module>
+    AddType application/javascript .js
+    AddType application/json .json
+    AddType application/css .css
+    AddType text/css .css
+    AddType application/x-font-woff .woff
+    AddType application/x-font-ttf .ttf
+    AddType application/x-font-opentype .otf
+    AddType application/x-font-truetype .ttf
+    AddType application/x-font-woff2 .woff2
+    AddType image/svg+xml .svg
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/gif .gif
+    AddType application/font-woff .woff
+    AddType application/font-ttf .ttf
+    AddType application/font-opentype .otf
+    AddType application/font-woff2 .woff2
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirige todas las solicitudes a index.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [QSA,L]
+</IfModule>

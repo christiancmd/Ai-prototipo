@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sectionAside = document.querySelector("#principal-aside");
-  const buttonAside = document.querySelector(".aside-hide-icon-box");
+  const aside = document.getElementById("aside");
+  const asideToggleButton = document.querySelector(".nav-icon");
 
-  console.log("actionAside.js loaded");
-
-  buttonAside.addEventListener("click", () => {
-    console.log("click aside button");
-
-    sectionAside.classList.toggle("style-hide-aside");
+  asideToggleButton.addEventListener("click", () => {
+    aside.classList.toggle("active-show-aside");
   });
 });

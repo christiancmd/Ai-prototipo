@@ -42,7 +42,7 @@ prevBtns.forEach((btn) => {
 });
 
 updateSteps(); // Inicializar la visualización del primer paso
-
+/*
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   alert("¡Formulario enviado!"); // Aquí puedes agregar la lógica para enviar los datos
@@ -54,11 +54,11 @@ form.addEventListener("submit", (event) => {
     console.log(`${key}: ${value}`);
   }
 });
-
+*/
 /*Add observation */
-/*
+
 const skillInput = document.getElementById("observation-input");
-const skillsList = document.getElementById("obeservations-list");
+const skillsList = document.getElementById("observations-list");
 const obsButton = document.getElementById("observation-add");
 
 function addSkill() {
@@ -94,4 +94,3 @@ skillInput.addEventListener("keypress", function (event) {
 });
 
 obsButton.addEventListener("click", addSkill);
-*/

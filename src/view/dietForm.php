@@ -29,39 +29,43 @@ require_once("../templates/functions.php");
                 <div class="step active" data-step="1">General</div>
                 <div class="step" data-step="2">Medico</div>
             </div>
-            <form action="#" id="form" class="form">
+            <form action="../controllers/patientForm.php" method="post" id="form" class="form">
                 <section class="step-content active" id="step1">
                     <h2>Informacion General</h2>
                     <div class="input-box">
                         <label>Nombres</label>
-                        <input type="text" placeholder="Ingresar Nombres" required />
+                        <input type="text" name="name-data" id="name-data" placeholder="Ingresar Nombres" required />
                     </div>
                     <div class="input-box">
                         <label>Apellidos</label>
-                        <input type="text" placeholder="Ingresar Apellidos" required />
+                        <input type="text" name="last-name-data" id="last-name-data" placeholder="Ingresar Apellidos"
+                            required />
                     </div>
 
                     <div class="column">
                         <div class="input-box">
                             <label for="">Cedula de Identidad</label>
-                            <input type="text" placeholder="Ingresar Cedula" maxlength="8" />
+                            <input type="text" id="id-data" name="id-data" placeholder="Ingresar Cedula"
+                                maxlength="8" />
                         </div>
 
                         <div class="input-box">
                             <label>Correo Electronico</label>
-                            <input type="text" placeholder="Ingresar Correo Electronico" required />
+                            <input type="text" id="email-data" name="email-data"
+                                placeholder="Ingresar Correo Electronico" required />
                         </div>
                     </div>
 
                     <div class="column">
                         <div class="input-box">
                             <label>Numero de Telefono</label>
-                            <input type="tel" placeholder="Ingresar Numero de Contacto" maxlength="11" max="11"
-                                required />
+                            <input type="tel" id="number-data" name="number-data"
+                                placeholder="Ingresar Numero de Contacto" maxlength="11" max="11" required />
                         </div>
                         <div class="input-box">
-                            <label>Fecha de Nacimiento</label>
-                            <input type="date" placeholder="Enter birth date" required />
+                            <label>Edad Actual</label>
+                            <input type="text" id="born-data" name="born-data" placeholder="Ingresar Edad" min="0"
+                                max="126" maxlength="3" required />
                         </div>
                     </div>
                     <div class="gender-box">
@@ -69,11 +73,11 @@ require_once("../templates/functions.php");
                         <div class="gender-option">
                             <div class="gender">
                                 <label for="check-male">Masculino</label>
-                                <input type="radio" id="check-male" name="gender" checked />
+                                <input type="radio" value="Masculino" id="check-male" name="gender1" class="radio" />
                             </div>
                             <div class="gender">
                                 <label for="check-female">Femenino</label>
-                                <input type="radio" id="check-female" name="gender" />
+                                <input type="radio" value="Femenino" id="check-female" name="gender2" class="radio" />
                             </div>
                         </div>
                     </div>
@@ -86,33 +90,35 @@ require_once("../templates/functions.php");
                     <div class="column">
                         <div class="input-box">
                             <label for="weigth">Peso (KG)</label>
-                            <input type="text" name="weigth" placeholder="Ingresar el Peso" required />
+                            <input type="text" id="weigth-data" name="weight-data" placeholder="Ingresar el Peso"
+                                required />
                         </div>
 
                         <div class="input-box">
                             <label for="heigth">Altura (CM)</label>
-                            <input type="text" name="heigth" placeholder="Ingresar Altura" required />
+                            <input type="text" id="heigth-data" name="height-data" placeholder="Ingresar Altura"
+                                required />
                         </div>
                     </div>
                     <div class="column">
                         <div class="input-box">
                             <label>Actividad Fisica</label>
-                            <select name="" id="" class="input-box">
+                            <select name="activity-data" id="activity-data" class="input-box">
                                 <option hidden>Actividad NAF</option>
-                                <option value="1">Sedentario</option>
-                                <option value="1.2">Ligera</option>
-                                <option value="1.5">Moderada</option>
-                                <option value="1.8">Intensa</option>
+                                <option value="Sedentario">Sedentario</option>
+                                <option value="Ligera">Ligera</option>
+                                <option value="Moderada">Moderada</option>
+                                <option value="Intensa">Intensa</option>
                             </select>
                         </div>
 
                         <div class="input-box">
                             <label>Razon de Visita</label>
-                            <select name="" id="" class="input-box">
+                            <select name="reason-data" id="reason-data" class="input-box">
                                 <option hidden>Razon</option>
-                                <option value="">Subir de Peso</option>
-                                <option value="">Bajar de Peso</option>
-                                <option value="">Mantener Peso</option>
+                                <option value="Subir de Peso">Subir de Peso</option>
+                                <option value="Bajar de Peso">Bajar de Peso</option>
+                                <option value="Mantener Peso">Mantener Peso</option>
                             </select>
                         </div>
                     </div>
@@ -127,7 +133,7 @@ require_once("../templates/functions.php");
                         </div>
                     </div>
 
-                    <div class="chips-container" id="obeservations-list"></div>
+                    <div class="chips-container" id="observations-list"></div>
 
 
                     <div class="buttons">
@@ -144,6 +150,7 @@ require_once("../templates/functions.php");
 
     <script src="../app/actionAside.js"></script>
     <script src="../app/dietFormApp.js"></script>
+    <script src="../app/aiPrototype.js"></script>
 
 </body>
 

@@ -2,7 +2,10 @@
 //Activar los tipos estrictos
 declare(strict_types=1);
 //Incluir el archivo de funciones mediante templates
+session_start();
+
 require_once("../templates/functions.php");
+
 
 ?>
 
@@ -12,17 +15,10 @@ require_once("../templates/functions.php");
 <?php render_template(template: "head", style: array("style" => "dietForm")) ?>
 
 <body>
-    <?php render_template(template: "header", ubication: "dietForm") ?>
+    <?php render_template(template: "headerAdmin", ubication: "dietForm") ?>
     <main>
 
-        <a href="#" class="nav-icon">
-            <input type="checkbox">
-            <svg class="aside-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"
-                    d="M12 9V5.414a1 1 0 0 1 1.707-.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586A1 1 0 0 1 12 18.586V15H6V9zM3 9v6" />
-            </svg>
-        </a>
-
+        <?php render_template(template: "asideButton", ubication: "dietForm") ?>
 
         <article class="container">
             <div class="progress-bar">
@@ -73,11 +69,13 @@ require_once("../templates/functions.php");
                         <div class="gender-option">
                             <div class="gender">
                                 <label for="check-male">Masculino</label>
-                                <input type="radio" value="Masculino" id="check-male" name="gender1" class="radio" />
+                                <input type="radio" value="Masculino" id="check-male" name="gender-data"
+                                    class="radio" />
                             </div>
                             <div class="gender">
                                 <label for="check-female">Femenino</label>
-                                <input type="radio" value="Femenino" id="check-female" name="gender2" class="radio" />
+                                <input type="radio" value="Femenino" id="check-female" name="gender-data"
+                                    class="radio" />
                             </div>
                         </div>
                     </div>
@@ -86,23 +84,23 @@ require_once("../templates/functions.php");
                 </section>
 
                 <section class="step-content" id="step2">
-                    <h2>Informacion Medica</h2>
+                    <h2>Informacion Medica</h2> <!--Regristrar la informacion medica del paciente-->
                     <div class="column">
-                        <div class="input-box">
-                            <label for="weigth">Peso (KG)</label>
+                        <div class="input-box"> <!--caja de los inputs-->
+                            <label for="weigth">Peso (KG)</label> <!--Extraer el peso-->
                             <input type="text" id="weigth-data" name="weight-data" placeholder="Ingresar el Peso"
                                 required />
                         </div>
 
-                        <div class="input-box">
-                            <label for="heigth">Altura (CM)</label>
+                        <div class="input-box"> <!--caja de los inputs-->
+                            <label for="heigth">Altura (CM)</label> <!--Extraer la altura-->
                             <input type="text" id="heigth-data" name="height-data" placeholder="Ingresar Altura"
                                 required />
                         </div>
                     </div>
                     <div class="column">
-                        <div class="input-box">
-                            <label>Actividad Fisica</label>
+                        <div class="input-box"> <!--caja de los inputs-->
+                            <label>Actividad Fisica</label> <!--Extraer la actividad fisica-->
                             <select name="activity-data" id="activity-data" class="input-box">
                                 <option hidden>Actividad NAF</option>
                                 <option value="Sedentario">Sedentario</option>
@@ -112,8 +110,8 @@ require_once("../templates/functions.php");
                             </select>
                         </div>
 
-                        <div class="input-box">
-                            <label>Razon de Visita</label>
+                        <div class="input-box"> <!--caja de los inputs-->
+                            <label>Razon de Visita</label> <!--Extraer la razon de visita-->
                             <select name="reason-data" id="reason-data" class="input-box">
                                 <option hidden>Razon</option>
                                 <option value="Subir de Peso">Subir de Peso</option>
@@ -123,22 +121,24 @@ require_once("../templates/functions.php");
                         </div>
                     </div>
 
-                    <div class="input-box">
-                        <label for="observation-input">Ingrese una Observacion:</label>
-                        <input type="text" id="observation-input" placeholder="Patologias" />
-                        <div class="btn-container">
-                            <button id="observation-add" class="btn-add" type="button">
-                                Agregar Observacion
-                            </button>
-                        </div>
+                    <div class="input-box"> <!--caja de los inputs-->
+                        <label for="">Patologia destacable</label>
+                        <select name="pathology-data" id="pathology-data" class="input-box">
+                            <option hidden>Elegir Patologia</option>
+                            <option value="Sindrome del intestino irritable">Sindrome del intestino irritable</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Hipertension">Hipertension</option>
+                            <option value="Resistencia a la insulina">Resistencia a la insulina</option>
+                            <option value="Hipoglucemia">Hipoglucemia</option>
+                        </select>
                     </div>
 
-                    <div class="chips-container" id="observations-list"></div>
+
 
 
                     <div class="buttons">
                         <button type="button" class="prev-btn btn">Anterior</button>
-                        <button type="submit" class="submit-btn btn">Registrarse</button>
+                        <button type="submit" class="submit-btn btn">Generar Guia</button>
                     </div>
                 </section>
             </form>

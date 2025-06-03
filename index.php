@@ -64,22 +64,23 @@ require_once("./src/templates/functions.php");
             </a>
           </div>
         </div>
-        <form action="./src/controllers/login.php" method="POST">
+        <form action="./src/controllers/login.php" method="POST"> <!--Formulario de inicio de sesion-->
           <!--Input-->
-          <div class="input-group">
+          <div class="input-group"> <!--input-->
             <input class="input" type="text" required id="user-login" name="UserCard" autocomplete="user"
-              maxlength="20">
+              maxlength="20"> <!--Atributos-->
             <label class="label" for="Email">Cedula</label>
           </div>
           <!--Input-->
-          <div class="input-group">
+          <div class="input-group"> <!--input de Contraseña-->
             <input class="input" type="password" required id="password-login" name="Password" maxlength="9">
+            <!--Atributos-->
             <label class="label" for="Password">Contraseña</label>
           </div>
           <!--Boton Para iniciar sesion-->
           <button type="submit" class="button-login">Iniciar Sesion</button>
         </form>
-        <div class="login-error-message">
+        <div class="login-error-message"> <!--Error-->
           <p>Clave o correo inválido</p>
         </div>
 

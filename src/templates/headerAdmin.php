@@ -1,7 +1,7 @@
 <header id="header-container">
     <div class="header-box">
         <div class="title">
-            <img src="./public/logo_nutrimore.png" alt="Our icon">
+            <img src="../../public/logo_nutrimore.png" alt="Our icon">
             <h1><a href="#">NUTRIMORE</a></h1>
         </div>
         <a class="icon-personal" href="#">

@@ -1,1 +1,64 @@
-{"Platillos_permitidos":[{"pautas":"Desayuno","alimentos":["Avena cocida con leche de almendras o arroz","Frutas cocidas (manzana, pera) sin piel","Yogur natural sin lactosa","Tostadas de pan blanco con aceite de oliva y aguacate"]},{"pautas":"Almuerzo","alimentos":["Arroz blanco o pasta sin gluten con pollo o pescado a la plancha","Pur\u00e9 de patatas o calabaza","Verduras cocidas al vapor (zanahoria, calabac\u00edn)","Tortilla francesa con dos huevos"]},{"pautas":"Cena","alimentos":["Sopa de verduras casera (evitar legumbres)","Pescado blanco al horno con hierbas provenzales","Pollo a la plancha con arroz blanco","Crema de calabaza o zanahoria"]},{"pautas":"Merienda","alimentos":["Galletas de arroz con mermelada sin az\u00facar","Frutas cocidas (compota de manzana)","Yogur natural sin lactosa","Batido de leche de almendras con pl\u00e1tano"]}],"Imc":{"resultado":"IMC: 19.8 (Peso inferior al normal)"},"Alimentos_no_permitidos":[{"pautas":"Evitar","alimentos":["Alimentos procesados y ultraprocesados","Alimentos ricos en grasas saturadas y trans","L\u00e1cteos enteros (leche de vaca, quesos grasos)","Legumbres (frijoles, lentejas, garbanzos)","Verduras cruc\u00edferas (br\u00f3coli, coliflor, repollo)","Alimentos picantes","Caf\u00e9 y alcohol","Edulcorantes artificiales"]}],"Recomendaciones":["Consumir agua diariamente (al menos 2 litros)","Evitar frituras y alimentos grasosos","Comer porciones peque\u00f1as y frecuentes (5-6 comidas al d\u00eda)","Masticar bien los alimentos","Aumentar gradualmente la ingesta de fibra soluble (avena, zanahoria)","Consultar con un gastroenter\u00f3logo para evaluar el colon irritable"]}
+{
+  "Platillos_permitidos": [
+    {
+      "pautas": "Desayuno",
+      "alimentos": [
+        "Avena cocida con leche de almendras o arroz",
+        "Frutas cocidas (manzana, pera) sin piel",
+        "Yogur natural sin lactosa",
+        "Tostadas de pan blanco con aceite de oliva y aguacate"
+      ]
+    },
+    {
+      "pautas": "Almuerzo",
+      "alimentos": [
+        "Arroz blanco o pasta sin gluten con pollo o pescado a la plancha",
+        "Pur\u00e9 de patatas o calabaza",
+        "Verduras cocidas al vapor (zanahoria, calabac\u00edn)",
+        "Tortilla francesa con dos huevos"
+      ]
+    },
+    {
+      "pautas": "Cena",
+      "alimentos": [
+        "Sopa de verduras casera (evitar legumbres)",
+        "Pescado blanco al horno con hierbas provenzales",
+        "Pollo a la plancha con arroz blanco",
+        "Crema de calabaza o zanahoria"
+      ]
+    },
+    {
+      "pautas": "Merienda",
+      "alimentos": [
+        "Galletas de arroz con mermelada sin az\u00facar",
+        "Frutas cocidas (compota de manzana)",
+        "Yogur natural sin lactosa",
+        "Batido de leche de almendras con pl\u00e1tano"
+      ]
+    }
+  ],
+  "Imc": { "resultado": "IMC: 19.8 (Peso inferior al normal)" },
+  "Alimentos_no_permitidos": [
+    {
+      "pautas": "Evitar",
+      "alimentos": [
+        "Alimentos procesados y ultraprocesados",
+        "Alimentos ricos en grasas saturadas y trans",
+        "L\u00e1cteos enteros (leche de vaca, quesos grasos)",
+        "Legumbres (frijoles, lentejas, garbanzos)",
+        "Verduras cruc\u00edferas (br\u00f3coli, coliflor, repollo)",
+        "Alimentos picantes",
+        "Caf\u00e9 y alcohol",
+        "Edulcorantes artificiales"
+      ]
+    }
+  ],
+  "Recomendaciones": [
+    "Consumir agua diariamente (al menos 2 litros)",
+    "Evitar frituras y alimentos grasosos",
+    "Comer porciones peque\u00f1as y frecuentes (5-6 comidas al d\u00eda)",
+    "Masticar bien los alimentos",
+    "Aumentar gradualmente la ingesta de fibra soluble (avena, zanahoria)",
+    "Consultar con un gastroenter\u00f3logo para evaluar el colon irritable"
+  ]
+}

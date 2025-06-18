@@ -1,0 +1,135 @@
+{
+  "listaDeIntercambio": [
+    {
+      "lacteos": [
+        {
+          "Leche entera": "240ml"
+        },
+        {
+          "Yogur griego natural entero": "170g"
+        },
+        {
+          "Queso cottage": "1/2 taza"
+        },
+        {
+          "Queso ricotta entero": "1/4 taza"
+        }
+      ]
+    },
+    {
+      "grasas": [
+        {
+          "Aguacate": "1/2 unidad mediana"
+        },
+        {
+          "Aceite de oliva extra virgen": "2 cucharaditas"
+        },
+        {
+          "Nueces": "30g"
+        },
+        {
+          "Almendras": "30g"
+        },
+        {
+          "Crema de cacahuete natural": "1 cucharada"
+        }
+      ]
+    },
+    {
+      "vegetales": [
+        {
+          "Espinacas": "1 taza"
+        },
+        {
+          "Brócoli": "1 taza"
+        },
+        {
+          "Coliflor": "1 taza"
+        },
+        {
+          "Zanahoria": "1 taza"
+        },
+        {
+          "Pimiento morrón": "1 taza"
+        }
+      ]
+    },
+    {
+      "proteinas": [
+        {
+          "Pechuga de pollo sin piel": "120g"
+        },
+        {
+          "Pescado blanco (merluza, bacalao)": "150g"
+        },
+        {
+          "Huevo entero": "2 unidades"
+        },
+        {
+          "Carne magra de res": "120g"
+        },
+        {
+          "Tofu firme": "120g"
+        }
+      ]
+    },
+    {
+      "almidones": [
+        {
+          "Batata (boniato)": "1/2 taza cocida"
+        },
+        {
+          "Lentejas": "1/2 taza cocida"
+        },
+        {
+          "Quinoa": "1/2 taza cocida"
+        },
+        {
+          "Frijoles negros": "1/2 taza cocidos"
+        },
+        {
+          "Arroz integral": "1/2 taza cocido"
+        }
+      ]
+    },
+    {
+      "frutas": [
+        {
+          "Manzana": "1 unidad mediana"
+        },
+        {
+          "Pera": "1 unidad mediana"
+        },
+        {
+          "Fresas": "1 taza"
+        },
+        {
+          "Arándanos": "1/2 taza"
+        },
+        {
+          "Naranja": "1 unidad mediana"
+        }
+      ]
+    }
+  ],
+  "Alimentos_no_permitidos": [
+    {
+      "pautas": "Evitar",
+      "alimentos": [
+        "Azúcar refinada",
+        "Bebidas azucaradas (refrescos, jugos procesados)",
+        "Dulces y postres elaborados",
+        "Miel, jarabe de maíz de alta fructosa",
+        "Pan blanco y productos de panadería refinados"
+      ]
+    },
+    {
+      "pautas": "Moderar",
+      "alimentos": [
+        "Grasas saturadas (carnes grasas, piel de pollo)",
+        "Alimentos procesados altos en sodio",
+        "Alcohol"
+      ]
+    }
+  ]
+}

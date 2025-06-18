@@ -12,30 +12,29 @@ async function sendDataToServer(data) {
       }
     );
 
-    if (!response.ok) {
-      // Si la respuesta HTTP no es exitosa (ej. 404, 500)
-      const errorText = await response.text(); // Lee el cuerpo de la respuesta para ver el error del servidor
-      console.error(
-        "Error en la respuesta del servidor:",
-        response.status,
-        errorText
-      );
-      throw new Error(
-        `Error en el servidor: ${response.status} - ${errorText}`
-      );
-    }
-
     // Intenta parsear la respuesta del servidor como JSON
     const serverResponse = await response.json();
     console.log("Respuesta del servidor:", serverResponse);
 
     // Condicional para mostrar alert según la respuesta del servidor
     if (serverResponse.status === "success") {
-      alert("✅ Operación exitosa: " + serverResponse.message);
+      Swal.fire({
+        title: "Registro Exitoso!",
+        text: "Se ha registrado el paciente exitosamente!",
+        icon: "success",
+      });
     } else if (serverResponse.status === "error") {
-      alert("❌ Error: " + serverResponse.message);
+      Swal.fire({
+        icon: "error",
+        title: "Registro Fallido",
+        text: "El usuario ya existe en el sistema.",
+      });
     } else {
-      alert("⚠️ Respuesta inesperada del servidor.");
+      Swal.fire({
+        icon: "warning",
+        title: "Registro Fallido",
+        text: "El usuario ya existe en el sistema.",
+      });
     }
   } catch (error) {
     console.error("Error al enviar datos al servidor:", error);

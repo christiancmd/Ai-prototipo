@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 session_start();
-
 //echo $_SESSION['id'] ?? "No session started"; // Depuracion de la sesion
 //echo $_SESSION['id_card_number'] ?? "No session started"; // Depuracion de la sesion
 include_once "../controllers/conection.php";
@@ -11,6 +10,9 @@ include_once "../controllers/conection.php";
 require_once("../templates/functions.php");
 
 $Id_doctor = $_SESSION['id'] ?? null; // Obtener el id del doctor de la sesion
+$Name_doctor = $_SESSION['name_doctor'] ?? null; // Obtener el nombre del doctor de la sesion
+$Last_name_doctor = $_SESSION['last_name_doctor'] ?? null; // Obtener el apellido del doctor de la sesion
+$Id_card_number = $_SESSION['id_card_number'] ?? null; // Obtener el numero de cedula del doctor de la sesion
 
 
 function query_process($query, $conection): array
@@ -51,7 +53,7 @@ GROUP BY
 $query2 = "SELECT 
 	patient.Name,
     patient.Last_name,
-    patient.date_registration AS Date
+    patient.Date_registration AS Date
 FROM
 	doctor
 JOIN
@@ -66,11 +68,13 @@ $data = query_process($query1, $conection); // Ejecutamos la consulta y obtenemo
 
 $data_date = query_process($query2, $conection); // Ejecutamos la consulta y obtenemos los datos
 
-//$query = "SELECT * FROM doctor WHERE id = $Id_doctor";
 
 
-extract($data[1]); // Extraemos los datos del array para usarlos en la vista
-extract($data_date[1]); // Extraemos los datos del array para usarlos en la vista
+if (isset($data) && is_array($data) && isset($data[1]) && is_array($data[1])) {
+  extract($data[1]);
+}
+
+//extract($data_date[1]); // Extraemos los datos del array para usarlos en la vista
 
 ?>
 
@@ -95,11 +99,11 @@ extract($data_date[1]); // Extraemos los datos del array para usarlos en la vist
 
           <section class="hero-box box-user box1">
             <div class="profile-img">
-              <img src="../img/home/profile.png" alt="User-profile">
+              <img src="../img/settings/user.png" alt="User-profile">
             </div>
             <hgroup>
               <p><?= $Name_doctor . ' ' . $Last_name_doctor ?></p>
-              <p><?= $Id_card_number ?></p>
+              <p>V-<?= $Id_card_number ?></p>
               <p>Nutricionista</p>
             </hgroup>
           </section>
@@ -116,14 +120,21 @@ extract($data_date[1]); // Extraemos los datos del array para usarlos en la vist
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($data_date as $row): ?>
+              <tbody>
+                <?php if (empty($data_date)): ?>
                   <tr>
-                    <td><?= $row['Name'] . ' ' . $row['Last_name'] ?></td>
-                    <td><?= date("d/m/Y", strtotime($row['Date'])) ?></td>
+                    <td class="no-patient">No hay pacientes registrados</td>
                   </tr>
-
-                <?php endforeach; ?>
+                <?php else: ?>
+                  <?php foreach ($data_date as $row): ?>
+                    <tr>
+                      <td><?= $row['Name'] . ' ' . $row['Last_name'] ?></td>
+                      <td><?= date("d/m/Y", strtotime($row['Date'])) ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                <?php endif; ?>
               </tbody>
+
             </table>
           </section>
 
@@ -150,13 +161,8 @@ extract($data_date[1]); // Extraemos los datos del array para usarlos en la vist
           </section>
 
           <section id="do-container" class="centex box5">
-            <div id="input-container" class="center">
-              <h1>Mis Tareas</h1>
-              <input type="text" placeholder="Ingresa una tarea" id="Ingresar-tarea">
-              <button type="submit">Crear Tarea</button>
-              <p id="totalTareas">Numero total de tareas: 0</p>
-            </div>
-            <div id="list-container"></div>
+            <h3>Frase Del Dia</h3>
+            <div id="content-phrase" class="center"></div>
           </section>
         </div>
       </article>
@@ -168,11 +174,7 @@ extract($data_date[1]); // Extraemos los datos del array para usarlos en la vist
   <?php render_template(template: "footer", ubication: "home") ?>
 
   <script src="../app/actionAside.js"></script>
-  <script src="../app/doList.js"></script>
+  <script src="../app/phraseList.js"></script>
 </body>
 
 </html>
-
-
-
-<!--  -->

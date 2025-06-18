@@ -11,7 +11,6 @@ $json_patient = file_get_contents('../controllers/patient.json');
 // Convertir JSON a objeto PHP
 $patient_data = json_decode($json_patient, true);
 
-
 extract(array: $patient_data);
 
 
@@ -49,7 +48,7 @@ extract(array: $patient_data);
         <section id="hero"> <!--MOSTRAMOS LOS DATOS RESUMINDOS EN UNA CARD -->
             <h2>Guia Alimentaria</h2>
             <div class="hero-content">
-                <a href="../document/foodGuide3.php" id="btn-guide" class="btn" target="_blank">
+                <a href="../document/guide.php" id="btn-guide" class="btn" target="_blank">
                     <!--ABRIMOS LA GUIA ALIMENTARIA EN UNA NUEVA PESTAÑA -->
                     Abrir Guia Alimentaria
                 </a>
@@ -83,9 +82,14 @@ extract(array: $patient_data);
 
     <?php render_template("footer", "dietGuide") ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../alert/sweetalert2.all.min.js"></script>
     <script src="../app/actionAside.js"></script>
     <script src="../app/dataPatientDb.js"></script>
     <script src="../app/dialogDietGuide.js"></script>
+
+
+
 
 </body>
 

@@ -1,21 +1,21 @@
 {
-    "name": "Christian reinaldo",
-    "last_name": "Holguin hinojosa",
-    "id_card_number": 30428334,
-    "email": "rosales@gmail.com",
-    "number": 4125896454,
-    "age": 22,
-    "genre": "Masculino",
-    "weight": "80",
+    "name": "Michell jaismir",
+    "last_name": "fuentes martines",
+    "id_card_number": 30743725,
+    "email": "michelfm1403260969@gmail.com",
+    "number": 4120672140,
+    "age": 20,
+    "genre": "Femenino",
+    "weight": "57",
     "height": "168",
-    "activity": "Ligera",
+    "activity": "Moderada",
     "reason": "Subir de Peso",
-    "pathology": "Sindrome del intestino irritable",
+    "pathology": "Diabetes",
     "nutrients_data": {
-        "imc": "Sobrepeso",
-        "tmb": 1745,
-        "naf": 1.3,
-        "rct": 2268.5,
-        "rct_obj": 2495.35
+        "imc": "Normopeso",
+        "tmb": 1359,
+        "naf": 1.6,
+        "rct": 2174.4,
+        "rct_obj": 2391.84
     }
 }

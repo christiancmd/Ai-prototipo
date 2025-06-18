@@ -2,8 +2,8 @@
 
 
 
-$name = $_SESSION['name_doctor'];
-$l_name = $_SESSION['last_doctor'];
+$name = "Admin";
+$l_name = "Super";
 
 $first_name = explode(separator: " ", string: $name)[0];
 $first_l_name = explode(separator: " ", string: $l_name)[0];
@@ -11,7 +11,6 @@ $first_l_name = explode(separator: " ", string: $l_name)[0];
 $full_name = "$first_name $first_l_name";
 
 
-$Id_doctor = $_SESSION['id'] ?? null; // Obtener el id del doctor de la sesion
 
 
 

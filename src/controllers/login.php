@@ -10,7 +10,7 @@ $password = $_POST['Password']; //Obtenemos la contraseña
 // Verificamos si existe el usuario
 $check_login = mysqli_query($conection, "SELECT * FROM doctor WHERE id_card_number = '$id_card_number' AND password = '$password'");
 
-if (mysqli_num_rows($check_login) > 0) { // Si existe el usuario
+if (mysqli_num_rows(result: $check_login) > 0) { // Si existe el usuario
 
     $query = $conection->prepare(query: "SELECT * FROM doctor WHERE id_card_number = ? AND Password = ?"); // Preparamos la consulta
     $query->bind_param("is", $id_card_number, $password); // Vinculamos los parametros
@@ -25,13 +25,19 @@ if (mysqli_num_rows($check_login) > 0) { // Si existe el usuario
             $_SESSION['id_card_number'] = $row["Id_card_number"];
             $_SESSION['name_doctor'] = $row["Name"];
             $_SESSION['last_doctor'] = $row["Last_name"];
+            $_SESSION['contact'] = $row["Contact"];
             header("location: ../view/home.php"); // Redirigimos a la pagina de inicio
         }
+
+
     }
 
 } else { // Si no existe el usuario
+
     echo "<script>alert('Usuario no encontrado') </script>";
     echo "<script>window.location = '../../index.php'</script>";
+
+
     exit();
 }
 /* */

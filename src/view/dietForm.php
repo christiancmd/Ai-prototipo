@@ -7,6 +7,7 @@ session_start();
 require_once("../templates/functions.php");
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -130,6 +131,7 @@ require_once("../templates/functions.php");
                             <option value="Hipertension">Hipertension</option>
                             <option value="Resistencia a la insulina">Resistencia a la insulina</option>
                             <option value="Hipoglucemia">Hipoglucemia</option>
+                            <option value="Intolerante a la lactosa">Intolerante de la lactosa</option>
                         </select>
                     </div>
 
@@ -138,7 +140,7 @@ require_once("../templates/functions.php");
 
                     <div class="buttons">
                         <button type="button" class="prev-btn btn">Anterior</button>
-                        <button type="submit" class="submit-btn btn">Generar Guia</button>
+                        <button type="submit" class="submit-btn btn" onclick="loading();">Generar Guia</button>
                     </div>
                 </section>
             </form>
@@ -150,7 +152,40 @@ require_once("../templates/functions.php");
 
     <script src="../app/actionAside.js"></script>
     <script src="../app/dietFormApp.js"></script>
-    <script src="../app/aiPrototype.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../alert/sweetalert2.all.min.js"></script>
+    <script>
+        function loading() {
+            if (navigator.onLine) {
+                let timerInterval;
+                Swal.fire({
+                    title: "Procesando...",
+                    html: "Desarrollando Guia alimentaria.",
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log("I was closed by the timer");
+                    }
+                });
+            } else {
+                alert("No tienes conexion")
+
+            }
+        }
+    </script>
+    <!-- <script src="../app/aiPrototype.js"></> -->
 
 </body>
 

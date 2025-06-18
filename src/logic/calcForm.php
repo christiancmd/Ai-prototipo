@@ -53,7 +53,7 @@ function calc_nutrients($data)
     $imc_base = calc_imc($weigth, $heigth);//calcular imc
 
     match (true) {
-        $imc_base >= 0 && $imc_base < 18.5 => $imc_data = "Infra",
+        $imc_base >= 0 && $imc_base < 18.5 => $imc_data = "Infrapeso",
         $imc_base >= 18.5 && $imc_base <= 24.9 => $imc_data = "Normopeso",
         $imc_base >= 25 && $imc_base <= 29.9 => $imc_data = "Sobrepeso",
         $imc_base >= 30 => $imc_data = "Obesidad",

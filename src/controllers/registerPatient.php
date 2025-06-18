@@ -39,6 +39,7 @@ $genre = $data['genre'] ?? '';
 $weight = isset($data['weight']) ? floatval($data['weight']) : 0.0;
 $height = isset($data['height']) ? floatval($data['height']) : 0.0;
 $activity = $data['activity'] ?? "Sedentario"; // Corregido: $data['activity'] en lugar de $data['$activity']
+$pathology = $data['pathology'] ?? "Sin patologia";
 $reason = $data['reason'] ?? '';
 
 date_default_timezone_set(timezoneId: 'America/Caracas'); ///Ejemplo de zona horaria
@@ -75,8 +76,8 @@ if (!$result) {
 
 $user_id = $conection->insert_id; // Obtener el ID del paciente recién insertado
 
-$query_status = "INSERT INTO status_patient (Tall, Weigth, Activity, Reason, FK_Patient) 
-                 VALUES ($height, $weight, '$activity', '$reason', $user_id)";
+$query_status = "INSERT INTO status_patient (Tall, Weigth, Activity, Pathology , Reason, FK_Patient) 
+                 VALUES ($height, $weight, '$activity', '$pathology', '$reason' , $user_id)";
 
 $result_status = $conection->query($query_status);
 

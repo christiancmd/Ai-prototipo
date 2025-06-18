@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 require_once("../logic/calcForm.php");
-
+require_once("../service/aiPrototype.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Procesar los datos del formulario aquí
@@ -48,10 +48,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'rct_obj' => $medic_data['rct_obj'],
     ];
 
+    /*  $prompt_ai = get_ai_response($data_patient);
+
+      $data_patient['prompt'] = [
+          'prompt' => $prompt_ai
+      ];
+  */
+
+
     $json_patient = json_encode($data_patient, JSON_PRETTY_PRINT);
 
     header('Content-Type: application/json');
     file_put_contents('patient.json', $json_patient);
+
+
+    get_ai_response($data_patient);
 
 
     header("location: ../view/dietGuide.php");

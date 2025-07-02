@@ -7,7 +7,6 @@ require_once("../service/aiPrototype.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Procesar los datos del formulario aquí
-
     $name_patient = $_POST['name-data'];//Dato del pacient
     $last_name_patient = $_POST['last-name-data'];//Dato del pacient
     $email_patient = $_POST['email-data'];//Dato del pacient
@@ -56,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   */
 
 
+
     $json_patient = json_encode($data_patient, JSON_PRETTY_PRINT);
 
     header('Content-Type: application/json');
@@ -64,9 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     get_ai_response($data_patient);
 
-
     header("location: ../view/dietGuide.php");
     exit;
+
+
+
     // Redirigir a la página deseada
 
 }

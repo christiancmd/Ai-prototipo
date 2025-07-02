@@ -193,7 +193,7 @@ body {
 
 main {
   width: 100%;
-  height: 100vh; /*Cambiar en auto luego*/
+  height: auto; /*Cambiar en auto luego*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,7 +216,7 @@ main {
   position: fixed;
   width: 300px;
   height: 100%;
-  background-color: var(--gray);
+  background-color: var(--white);
   left: -100%;
   display: flex;
   justify-content: center;
@@ -425,27 +425,12 @@ dialog .option-content a {
 dialog .option-content a:hover {
   background-color: var(--blue-lake);
 }
-/*
-dialog .option-content:where(.back-btn, .cancel-btn) {
-  width: 200px;
-  height: 30px;
-  border: 1px solid var(--black);
-}
 
-dialog .option-conten .back-btn,
-dialog .option-conten .cancel-btn {
-  background-color: #2469a0;
-  color: var(--white);
-  width: 200px;
-  height: 30px;
-  border: 1px solid var(--black);
-}
-*/
 /*-----------------------Main: hero ------------------------------*/
 
 #hero {
   width: 90%;
-  height: 100%;
+  height: auto;
   position: relative;
   border-radius: 10px;
   background-color: var(--sepcial-White);
@@ -454,8 +439,20 @@ dialog .option-conten .cancel-btn {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 0px 10px 0 10px;
   box-shadow: 0 10px 10px var(--gray-black);
+  overflow: hidden;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--clear-green-lake);
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
 
 #hero h2 {
@@ -464,15 +461,19 @@ dialog .option-conten .cancel-btn {
   margin-top: 35px;
 }
 
-#hero .hero-content {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+#hero h2::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
 
+/*
 #hero .hero-content .patient-content {
   width: auto;
 }
@@ -485,24 +486,7 @@ dialog .option-conten .cancel-btn {
   display: flex;
   flex-direction: column;
   gap: 2px;
-}
-
-#hero .hero-content .button-content {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#hero .btn {
-  text-decoration: none;
-  color: var(--white);
-  width: 250px;
-  text-align: center;
-}
+}*/
 
 #hero
   :where(#hero .back-open-dialog, #hero .add-open-dialog, #hero #btn-guide) {
@@ -522,6 +506,126 @@ dialog .option-conten .cancel-btn {
   ):hover {
   box-shadow: 0 0 5px var(--black);
   cursor: pointer;
+}
+
+#hero .hero-content {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 5px 30px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para el resumen del paciente */
+#hero .hero-content .patient-content {
+  width: 100%;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#hero .hero-content .patient-content h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+#hero .hero-content .patient-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--clear-green-lake) 0%,
+    var(--blue-lake) 100%
+  );
+}
+
+#hero .hero-content .patient-content .data-patient {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+#hero .hero-content .patient-content .data-patient p {
+  margin: 0;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #4a5568;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hero .hero-content .patient-content .data-patient p span {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/*
+#hero .hero-content {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#hero .hero-content .patient-content .data-patient {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+#hero .hero-content .patient-content .data-patient p {
+  margin: 0;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #4a5568;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hero .hero-content .patient-content .data-patient p span {
+  font-weight: 500;
+  color: #2d3748;
+}*/
+
+#hero .hero-content .button-content {
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#hero .btn {
+  text-decoration: none;
+  color: var(--white);
+  width: 250px;
+  text-align: center;
 }
 
 #hero #btn-guide:hover {
@@ -659,6 +763,10 @@ dialog .option-conten .cancel-btn {
     align-items: center;
     justify-content: center;
     font-size: clamp(0.9em, 2.5vw, 1em);
+  }
+
+  #hero .hero-content .patient-content .data-patient {
+    grid-template-columns: 1fr 1fr;
   }
 
   /*-------------------------Main: dialog--------------------------*/

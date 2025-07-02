@@ -28,6 +28,7 @@ html {
   --clear-yellow: #f2f5f0;
   --gray-blue: #a3c9e2;
   --gray: #d5d5d5;
+  --special-gray: #1c222b;
 
   --white: #ffffff;
   --sepcial-White: #f4f4f8;
@@ -47,6 +48,18 @@ html {
 
 button {
   transition: box-shadow 0.2s ease-in, background-color 0.3s ease-in;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+small {
+  color: var(--special-gray) !important;
 }
 
 /*--------------------------Header------------------------------*/
@@ -230,7 +243,7 @@ main {
   position: fixed;
   width: 300px;
   height: 100%;
-  background-color: var(--gray);
+  background-color: var(--white);
   left: -100%;
   display: flex;
   justify-content: center;
@@ -402,7 +415,7 @@ main {
   top: 0;
 }
 
-#hero-container .hero-bar p {
+#hero-container .hero-bar strong {
   color: var(--white);
   font-weight: bold;
 }
@@ -420,8 +433,16 @@ main {
 
 #hero-container .hero-content section {
   position: relative;
-  background-color: var(--sepcial-White) !important;
-  border: 4px solid var(--clear-green-mud) !important;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%) !important;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+#hero-container .hero-content section:hover {
+  box-shadow: 0 0 10px var(--black);
+  transform: translateY(-4px);
 }
 
 #hero-container .hero-content .box-user {
@@ -432,12 +453,21 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  background-color: var(--white);
-  border: 1px solid var(--black);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
   border-radius: 10px;
   text-align: center;
 }
 
+#hero-container .hero-content .box-user::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--clear-green-lake);
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
+}
 #hero-container .hero-content .box-user hgroup {
   display: flex;
   flex-direction: column;
@@ -447,10 +477,10 @@ main {
 }
 
 .profile-img {
-  width: 140px;
+  width: 150px;
   padding: 10px;
   border-radius: 50%;
-  border: 1px solid var(--black);
+  background-color: var(--white);
 }
 
 .profile-img img {
@@ -458,14 +488,23 @@ main {
   border-radius: 50%;
 }
 
-#hero-container .hero-content :is(.male-box, .female-box) {
+#hero-container .hero-content :where(.male-box, .female-box) {
   width: 100%;
   height: 100%;
-  background-color: var(--white);
-  border: 1px solid var(--black);
   border-radius: 10px;
   overflow: hidden;
   padding: 20px 0;
+}
+
+#hero-container .hero-content :where(.male-box, .female-box)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--clear-green-lake);
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
 
 #hero-container .hero-content :is(.male-box, .female-box) .data-resume {
@@ -488,8 +527,7 @@ main {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  background-color: var(--clear-green-mud) !important;
-  border: 1px solid var(--black);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
   border-radius: 10px;
 }
 
@@ -501,7 +539,29 @@ main {
   font-size: clamp(1.2em, 2.5vw, 1.6em);
   text-align: center;
   font-weight: bold;
-  color: var(--black);
+}
+
+#hero-container .hero-content .pacient-table header strong::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
+}
+
+#hero-container .hero-content .pacient-table header strong::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--clear-green-lake);
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
 
 .table {
@@ -511,6 +571,7 @@ main {
   margin: 20px 0;
   font-size: 16px;
   text-align: left;
+  color: var(--special-gray) !important;
 }
 
 .table th,
@@ -522,10 +583,12 @@ main {
 .table th {
   background-color: var(--white);
   font-weight: bold;
+  background-color: var(--clear-green-mud);
 }
 
 .table tr:nth-child(even) {
   background-color: var(--white);
+  background-color: var(--clear-green-mud);
 }
 
 .table tr:hover {
@@ -544,12 +607,23 @@ main {
   align-items: center;
   width: 100%;
   height: 400px;
-  background-color: white;
-  border: 5px solid black;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  border: 5px solid var(--black);
   border-radius: 10px;
   flex-direction: column;
   text-align: center;
   padding-top: 10px;
+}
+
+#do-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--clear-green-lake);
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
 
 #do-container h3 {
@@ -559,15 +633,18 @@ main {
   position: absolute;
   top: 0;
   margin-top: 25px;
+  padding-bottom: 5px;
 }
-
-/*
-#do-container #content-phrase {
-  font-size: clamp(1.1em, 2.5vw, 1.2em);
-  font-weight: bold;
-  user-select: none;
+#do-container h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clear-green-lake) 0%, #4facfe 100%);
 }
-*/
 
 /*-----------------------footer ------------------------------*/
 
@@ -668,7 +745,6 @@ main {
   }
 
   #hero-container .hero-content section {
-    border: 1px solid black;
     border-radius: 10px;
   }
 

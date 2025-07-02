@@ -32,12 +32,24 @@ contactForm.addEventListener("submit", async (e) => {
 
   if (result.isConfirmed) {
     try {
-      const response = await fetch("../controllers/updateSettings.php", {
+      const response = await fetch("../controllers/updateContactSettings.php", {
         method: "POST",
         body: data,
       });
 
       if (response.ok) {
+        //console.log(response);
+        console.log(response.redirected);
+
+        if (response.redirected) {
+          //const result = await response.text();
+          //console.log(result);
+          alert("Proceso exitoso");
+          location.reload();
+          return;
+        }
+
+        alert("Contraseña incorrecta");
         location.reload();
       }
 

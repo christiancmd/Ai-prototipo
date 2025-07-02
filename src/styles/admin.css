@@ -405,7 +405,7 @@ main {
   position: fixed;
   width: 300px;
   height: 100%;
-  background-color: var(--gray);
+  background-color: var(--white);
   left: -100%;
   display: flex;
   justify-content: center;
@@ -445,6 +445,7 @@ main {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  color: var(--black) !important;
 }
 
 #aside .navegator-box .nav-aside-list #home-page {
@@ -469,7 +470,7 @@ main {
 
 #aside .navegator-box .nav-aside-list li a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--black) !important;
 }
 
 #aside .config-aside-box {

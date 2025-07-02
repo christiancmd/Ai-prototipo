@@ -84,7 +84,10 @@ require_once("./src/templates/functions.php");
             <label class="label" for="Password">Contraseña</label>
           </div>
           <!--Boton Para iniciar sesion-->
-          <button type="submit" class="button-login">Iniciar Sesion</button>
+          <button type="submit" id="action-btn" class="button-login">
+            <span class="btn-text">Iniciar Sesion</span>
+            <div class="loader"></div>
+          </button>
         </form>
         <div class="login-error-message">
           <!--Error-->

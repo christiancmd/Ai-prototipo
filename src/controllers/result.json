@@ -2,113 +2,50 @@
   "listaDeIntercambio": [
     {
       "lacteos": [
-        {
-          "Leche entera": "240ml"
-        },
-        {
-          "Yogur griego natural entero": "170g"
-        },
-        {
-          "Queso cottage": "1/2 taza"
-        },
-        {
-          "Queso ricotta entero": "1/4 taza"
-        }
+        { "Yogur natural descremado sin lactosa": "150g" },
+        { "Kefir de agua": "150ml" }
       ]
     },
     {
       "grasas": [
-        {
-          "Aguacate": "1/2 unidad mediana"
-        },
-        {
-          "Aceite de oliva extra virgen": "2 cucharaditas"
-        },
-        {
-          "Nueces": "30g"
-        },
-        {
-          "Almendras": "30g"
-        },
-        {
-          "Crema de cacahuete natural": "1 cucharada"
-        }
+        { "Aceite de oliva virgen extra": "1 cucharadita" },
+        { "Aguacate": "1/8 unidad" },
+        { "Nueces": "15g (5-7 unidades)" },
+        { "Semillas de chía": "1 cucharadita" }
       ]
     },
     {
       "vegetales": [
-        {
-          "Espinacas": "1 taza"
-        },
-        {
-          "Brócoli": "1 taza"
-        },
-        {
-          "Coliflor": "1 taza"
-        },
-        {
-          "Zanahoria": "1 taza"
-        },
-        {
-          "Pimiento morrón": "1 taza"
-        }
+        { "Espinacas": "1 taza" },
+        { "Zanahoria cocida": "1/2 taza" },
+        { "Calabacín": "1/2 taza" },
+        { "Pimiento rojo (cocido)": "1/2 taza" },
+        { "Pepino (pelado)": "1/2 taza" }
       ]
     },
     {
       "proteinas": [
-        {
-          "Pechuga de pollo sin piel": "120g"
-        },
-        {
-          "Pescado blanco (merluza, bacalao)": "150g"
-        },
-        {
-          "Huevo entero": "2 unidades"
-        },
-        {
-          "Carne magra de res": "120g"
-        },
-        {
-          "Tofu firme": "120g"
-        }
+        { "Pechuga de pollo a la plancha": "85g" },
+        { "Pescado blanco al horno (merluza, lenguado)": "100g" },
+        { "Tofu firme": "85g" },
+        { "Claras de huevo": "3 unidades" }
       ]
     },
     {
       "almidones": [
-        {
-          "Batata (boniato)": "1/2 taza cocida"
-        },
-        {
-          "Lentejas": "1/2 taza cocida"
-        },
-        {
-          "Quinoa": "1/2 taza cocida"
-        },
-        {
-          "Frijoles negros": "1/2 taza cocidos"
-        },
-        {
-          "Arroz integral": "1/2 taza cocido"
-        }
+        { "Batata (camote) cocida": "1/2 taza" },
+        { "Calabaza (zapallo) cocida": "1/2 taza" },
+        { "Quinoa cocida": "1/3 taza" },
+        { "Arroz blanco": "1/4 taza" }
       ]
     },
     {
       "frutas": [
-        {
-          "Manzana": "1 unidad mediana"
-        },
-        {
-          "Pera": "1 unidad mediana"
-        },
-        {
-          "Fresas": "1 taza"
-        },
-        {
-          "Arándanos": "1/2 taza"
-        },
-        {
-          "Naranja": "1 unidad mediana"
-        }
+        { "Plátano pequeño (maduro)": "1/2 unidad" },
+        { "Arándanos": "1/2 taza" },
+        { "Fresas": "1 taza" },
+        { "Kiwi": "1 unidad" },
+        { "Mandarina": "1 unidad" }
       ]
     }
   ],
@@ -116,19 +53,35 @@
     {
       "pautas": "Evitar",
       "alimentos": [
-        "Azúcar refinada",
-        "Bebidas azucaradas (refrescos, jugos procesados)",
-        "Dulces y postres elaborados",
-        "Miel, jarabe de maíz de alta fructosa",
-        "Pan blanco y productos de panadería refinados"
+        "Frituras",
+        "Alimentos procesados",
+        "Bebidas azucaradas (refrescos, jugos)",
+        "Edulcorantes artificiales (excepto stevia y eritritol con moderación)",
+        "Alcohol",
+        "Cafeína en exceso",
+        "Comida rápida",
+        "Embutidos",
+        "Pan blanco",
+        "Trigo",
+        "Cebolla",
+        "Ajo",
+        "Lácteos enteros",
+        "Legumbres (inicialmente, reintroducir gradualmente)",
+        "Crucíferas (brócoli, coliflor, repollo, coles de Bruselas)",
+        "Manzana",
+        "Pera",
+        "Sandía",
+        "Melón",
+	      "Alimentos altos en FODMAPs",
+        "Alimentos picantes"
       ]
     },
     {
-      "pautas": "Moderar",
+      "pautas": "Limitar",
       "alimentos": [
-        "Grasas saturadas (carnes grasas, piel de pollo)",
-        "Alimentos procesados altos en sodio",
-        "Alcohol"
+        "Granos integrales",
+        "Frutos secos (grandes cantidades)",
+        "Chocolate negro (pequeñas porciones)"
       ]
     }
   ]

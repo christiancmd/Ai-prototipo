@@ -32,9 +32,6 @@ $Contact_doctor = startFirstZero($Contact_doctor);
     <?php render_template(template: "asideButton", ubication: "settings") ?>
 
     <section id="hero">
-      <header>
-        <h1>CONFIGURACIÓN</h1>
-      </header>
 
       <!-- Profile user -->
 
@@ -43,6 +40,7 @@ $Contact_doctor = startFirstZero($Contact_doctor);
           <header>
             <h2>Perfil</h2>
           </header>
+          <hr>
           <div class="convertor">
             <img id="profileimg" src="../img/settings/user.png">
           </div>
@@ -50,6 +48,7 @@ $Contact_doctor = startFirstZero($Contact_doctor);
             <span id="name"><?= $Name_doctor . " " . $Last_name_doctor ?></span>
             <span id="Num-tlf"><?= '0' . $Contact_doctor ?></span>
           </hgroup>
+          <hr>
         </div>
 
         <!-- contact user -->
@@ -57,6 +56,7 @@ $Contact_doctor = startFirstZero($Contact_doctor);
         <div id="contact" class="settings-box">
           <header>
             <h2>Cambiar Contacto</h2>
+
           </header>
 
           <form action="#" method="post" id="contact-update-form" novalidate>
@@ -74,6 +74,7 @@ $Contact_doctor = startFirstZero($Contact_doctor);
             </div>
             <button type="submit" id="aceptar-num">Cambiar</button>
           </form>
+
         </div>
         <!-- Pass user -->
 

@@ -86,11 +86,4 @@ function addSkill() {
   }
 }
 
-// Permitir agregar con la tecla Enter // revisaaaaar
-skillInput.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    addSkill();
-  }
-});
-
 obsButton.addEventListener("click", addSkill);

@@ -6,7 +6,7 @@ session_start();
 
 require_once("../templates/functions.php");
 
-
+$origen = "moduleAi";
 
 ?>
 
@@ -29,6 +29,11 @@ require_once("../templates/functions.php");
             <form action="../controllers/patientForm.php" method="post" id="form" class="form">
                 <section class="step-content active" id="step1">
                     <h2>Informacion General</h2>
+
+                    <div class="input-box">
+                        <input type="hidden" name="origen-form" value='<?= $origen ?>' required />
+                    </div>
+
                     <div class="input-box">
                         <label>Nombres</label>
                         <input type="text" name="name-data" id="name-data" placeholder="Ingresar Nombres" required />

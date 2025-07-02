@@ -338,7 +338,7 @@ if (isset($list_aliment_data) && is_array($list_aliment_data) && !empty($list_al
 $pdf->Ln();
 $pdf->SetFont('Arial', style: 'B', size: 10);
 $pdf->SetTextColor(255, 0, 0);
-$warning = "Advertncia: Esta información es de carácter académico e informativo. No reemplaza la valoración médica presencial ni debe utilizarse para autodiagnóstico. Ante cualquier síntoma, consulta siempre con un profesional de salud.";
+$warning = "Advertencia: Esta información es de carácter académico e informativo. No reemplaza la valoración médica presencial ni debe utilizarse para autodiagnóstico. Ante cualquier síntoma, consulta siempre con un profesional de salud.";
 $pdf->MultiCell(0, 6, convert_string($warning));
 //Fin de tabla de Guía Alimentaria
 $pdf->Ln();

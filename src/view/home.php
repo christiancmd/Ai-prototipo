@@ -93,7 +93,7 @@ if (isset($data) && is_array($data) && isset($data[1]) && is_array($data[1])) {
 
       <article id="hero-container">
         <header class="hero-bar">
-          <p>Guia Alimentaria</p>
+          <strong>Guia Alimentaria</strong>
         </header>
         <div class="hero-content">
 

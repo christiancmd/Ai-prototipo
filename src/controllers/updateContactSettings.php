@@ -34,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             header("Location: ../view/settings.php");
         }
         $stmt->close();
+    } else {
+        echo json_encode(["status" => "error", "message" => "Password invalid"]);
     }
 
 }
